@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 
+from django.conf.global_settings import EMAIL_HOST, EMAIL_HOST_PASSWORD, EMAIL_USE_SSL, SERVER_EMAIL, DEFAULT_FROM_EMAIL
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -122,3 +124,13 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+#Конфигурация сервера электронной почты
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_HOST_USER = 'chto-ya-tut-delayu@yandex.ru'
+EMAIL_HOST_PASSWORD = 'lzilppdgnkirholc'
+EMAIL_PORT = 465
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+
+SERVER_EMAIL = EMAIL_HOST_USER
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
